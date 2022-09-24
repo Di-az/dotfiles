@@ -31,6 +31,13 @@ dotfiles:
     src: config/nvim
     dst: ~/.config/nvim
     chmod: '755'
+  f_gitconfig:
+    src: gitconfig
+    dst: ~/.gitconfig
+  f_git-prompt.sh:
+    src: git-prompt.sh
+    dst: ~/.git-prompt.sh
+    chmod: '775'
 profiles:
   diaz:
     dotfiles:
@@ -41,3 +48,5 @@ profiles:
     - d_kitty
     - d_i3
     - d_nvim
+    - f_gitconfig
+    - f_git-prompt.sh
