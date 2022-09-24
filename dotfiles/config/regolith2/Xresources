@@ -1,0 +1,48 @@
+
+!Use default Ubuntu GNOME Wallpaper
+regolith.wallpaper.color: black
+regolith.wallpaper.file: /usr/share/backgrounds/warty-final-ubuntu.png
+!regolith.wallpaper.file: 
+regolith.wallpaper.options: zoom
+
+
+
+!Correct date formating
+i3xrocks.date.format2: %A %d/%m  %I:%M%p
+
+!Configure volume buttons
+i3xrocks.action.volume.left: gnome-control-center sound --class=floating_window
+i3xrocks.action.volume.middle: amixer -q -D pulse sset Master toggle 
+
+
+!Broders and shit
+i3-wm.client.focused.color.child_border: #FF3131
+i3-wm.gaps.inner.size: 10 
+
+!Workspaces
+i3-wm.bar.workspace.active.background.color: #ff0000
+i3-wm.bar.separator.color: #0000FF
+
+!TRASH
+i3-wm.bar.workspace.active.border.color: #00FF00
+i3-wm.bar.workspace.active.text.color: #00FF00
+i3-wm.client.unfocused.color.border: #00FF00
+
+
+i3-wm.bar.background.color:	#1F2430
+i3-wm.bar.position: bottom
+i3-wm.bar.separator.color: #FF0000
+!i3-wm.bar.statusline.color: #FF0000
+
+
+
+
+
+i3-wm.workspace.01.name: 1:1
+i3-wm.workspace.02.name: 2:2
+i3-wm.workspace.03.name: 3:3
+
+
+for_window [class="Google-chrome"]: border none
+for_window [class="Google-chrome" instance="google-chrome"] border none
+regolith.look.path: /usr/share/regolith-look/default

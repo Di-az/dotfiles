@@ -1,0 +1,14 @@
+alias tec='cd /home/diaz/Documents/Tec/Semestres'
+alias programacion='cd /home/diaz/Documents/Programacion'
+alias cd..='cd ..'
+alias cd...="cd ../.."
+alias cd....="cd ../../.."
+alias cd.....="cd ../../../.."
+alias cd......="cd ../../../../.."
+alias update='sudo apt-get update && sudo apt-get upgrade'
+alias long='PROMPT_DIRTRIM=0'
+alias short='PROMPT_DIRTRIM=1'
+alias tldr='tldr -t ocean'
+alias backup='echo "shell &&  wsl --export Ubuntu-20.04 ubuntubackup.tar"'
+alias avenv="unset PROMPT_COMMAND && source ./venv/bin/activate" 
+

@@ -8,4 +8,36 @@ config:
   link_on_import: nolink
   longkey: false
 dotfiles:
+  f_bashrc:
+    src: bashrc
+    dst: ~/.bashrc
+  f_bash_aliases:
+    src: bash_aliases
+    dst: ~/.bash_aliases
+  d_polybar:
+    src: config/polybar
+    dst: ~/.config/polybar
+  d_regolith2:
+    src: config/regolith2
+    dst: ~/.config/regolith2
+  d_kitty:
+    src: config/kitty
+    dst: ~/.config/kitty
+  d_i3:
+    src: config/i3
+    dst: ~/.config/i3
+    chmod: '755'
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+    chmod: '755'
 profiles:
+  diaz:
+    dotfiles:
+    - f_bashrc
+    - f_bash_aliases
+    - d_polybar
+    - d_regolith2
+    - d_kitty
+    - d_i3
+    - d_nvim
