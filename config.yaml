@@ -38,6 +38,10 @@ dotfiles:
     src: git-prompt.sh
     dst: ~/.git-prompt.sh
     chmod: '775'
+  f_wallpaper:
+    src: bin/wallpaper
+    dst: ~/.bin/wallpaper
+    chmod: '755'
 profiles:
   diaz:
     dotfiles:
@@ -50,3 +54,4 @@ profiles:
     - d_nvim
     - f_gitconfig
     - f_git-prompt.sh
+    - f_wallpaper
