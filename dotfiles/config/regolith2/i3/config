@@ -154,4 +154,10 @@ font pango:$i3-wm.font
 include /usr/share/regolith/i3/config.d/*
 
 # Include any user i3 partials
-include $HOME/.config/regolith2/i3/config.d/*
+include $HOME/.config/regolith2/i3/config.d
+include $HOME/.config/regolith2/i3/config
+
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Keyboard layour switch
+exec "setxkbmap -layout us,la"

@@ -13,7 +13,7 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 -- Searching
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 --Left bar & displaying
@@ -26,3 +26,6 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 
 vim.g.mapleader = " "
+
+--Mouse
+vim.opt.mouse = 'a'
