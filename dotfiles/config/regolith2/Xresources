@@ -2,7 +2,6 @@
 !Use default Ubuntu GNOME Wallpaper
 regolith.wallpaper.color: black
 regolith.wallpaper.file: /usr/share/backgrounds/warty-final-ubuntu.png
-!regolith.wallpaper.file: 
 regolith.wallpaper.options: zoom
 
 
@@ -17,12 +16,19 @@ i3xrocks.action.volume.middle: amixer -q -D pulse sset Master toggle
 
 !Broders and shit
 i3-wm.client.focused.color.child_border: #FF3131
-!i3-wm.gaps.inner.size: 30 
-!i3-wm.gaps.top.size: 50
-!i3-wm.gaps.outer.size: 50
+!i3-wm.client.focused.color.child_border: #00FF00
+i3-wm.gaps.inner.size: 5
+i3-wm.gaps.top.size: 5
+i3-wm.gaps.outer.size: 5
+
+
+
+
+i3-wm.bar.trayoutput: none
 
 !Workspaces
-i3-wm.bar.workspace.active.background.color: #ff0000
+!i3-wm.bar.workspace.active.background.color: #FF0000
+i3-wm.bar.workspace.active.background.color: #00FF00
 
 !TRASH
 i3-wm.bar.workspace.active.border.color: #00FF00
@@ -34,7 +40,8 @@ i3-wm.bar.background.color:	#1F2430
 i3-wm.bar.position: bottom
 i3-wm.bar.mode: dock
 !i3-wm.bar.separator.color: #FF0000
-i3-wm.bar.separator.color: #FFFF00
+i3-wm.bar.separator.color: #00FF00
+i3-wm.bar.separator.char: "~"
 
 
 
@@ -47,10 +54,10 @@ i3-wm.workspace.06.name: 6:6
 i3-wm.workspace.07.name: 7:7
 i3-wm.workspace.08.name: 8:8
 i3-wm.workspace.09.name: 9:9
-i3-wm.workspace.010.name: 10:10
+i3-wm.workspace.10.name: 10:10
 
 
 for_window [class="Google-chrome"]: border none
 for_window [class="Google-chrome" instance="google-chrome"] border none
-!regolith.look.path: /usr/share/regolith-look/ayu-mirage
+!regolith.look.path: /usr/share/regolith-look/blackhole
 regolith.look.path: /usr/share/regolith-look/default

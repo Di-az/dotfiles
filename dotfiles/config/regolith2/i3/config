@@ -146,6 +146,13 @@ set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urg
 set_from_resource $i3-wm.font gtk.font_name Sans 13
 font pango:$i3-wm.font
 
+# i3 Gaps Configuration
+for_window [class=".*"] border pixel 2
+gaps inner 10
+gaps top 30
+
+
+
 ###############################################################################
 # i3 Config Partials
 ###############################################################################
@@ -154,10 +161,18 @@ font pango:$i3-wm.font
 include /usr/share/regolith/i3/config.d/*
 
 # Include any user i3 partials
-include $HOME/.config/regolith2/i3/config.d
 include $HOME/.config/regolith2/i3/config
 
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# Launch polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Run animated wallpaper
+exec_always --no-startup-id wallpaper $HOME/Wallpapers/GlowingPinkCity.mp4
+
+# Disabled i3 bar
+# /usr/share/regolith/i3/config.d/70_bar
 
 # Keyboard layour switch
-exec "setxkbmap -layout us,la"
+#exec "setxkbmap -layout us,latam -option 'grp:alt_shift_toggle'"
+exec "setxkbmap -layout us,latam"
+exec "setxkbmap -option 'grp:alt_shift_toggle'"

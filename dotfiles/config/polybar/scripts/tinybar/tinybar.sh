@@ -3,5 +3,5 @@
 #!/usr/bin/env bash
 
 echo "---" | tee -a /tmp/polybar2.log
-polybar tray main >> /tmp/polybar2.log 2>&1
+polybar tray -c /home/diaz/.config/polybar/themes/chnvok/config.ini >> /tmp/polybar2.log 2>&1
 
