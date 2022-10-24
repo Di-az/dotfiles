@@ -8,6 +8,17 @@ sleep 0.3
 
 #xwinwrap -ov -g 1920x1080+0+0 -- mpv -wid WID "$1" --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-keepaspect --no-input-default-bindings --hwdec&
 
+if type "xrandr"; then
+	for m in $(xrandr --query | grep "connected" | grep -Eo '[0-9]+x[0-9]+\+[0-9]+\+[0-9]+'); do
+		xwinwrap -ov -g "$m" -- mpv -wid WID "$1" --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-keepaspect --no-input-default-bindings --hwdec&
+	done
+else
+	xwinwrap -ov -g 1920x1080+0+0 -- mpv -wid WID "$1" --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-keepaspect --no-input-default-bindings --hwdec&
+fi
+
+
+
+:'
 if [ "$1" ]; then
 	echo "test"
 	xwinwrap -ov -g 1920x1080+0+0 -- mpv -wid WID "$1" --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-keepaspect --no-input-default-bindings --hwdec&
@@ -17,3 +28,6 @@ if [ "$2" ]; then
 	xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID "$2" --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-keepaspect --no-input-default-bindings --hwdec&
 fi
 
+
+#xrandr --query | grep "connected" | grep -Eo '[0-9]+x[0-9]+\+[0-9]+\+[0-9]+'
+'

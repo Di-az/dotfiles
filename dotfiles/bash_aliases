@@ -1,5 +1,5 @@
 alias tec='cd /home/diaz/Documents/Tec/Semestres'
-alias programacion='cd /home/diaz/Documents/Programacion'
+alias projects='cd /home/diaz/Documents/Programacion'
 alias cd..='cd ..'
 alias cd...="cd ../.."
 alias cd....="cd ../../.."

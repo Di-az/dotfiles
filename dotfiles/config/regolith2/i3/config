@@ -150,6 +150,7 @@ font pango:$i3-wm.font
 for_window [class=".*"] border pixel 2
 gaps inner 10
 gaps top 30
+#gaps bottom 30
 
 
 
