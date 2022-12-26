@@ -5,24 +5,30 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
-    
+
     -- Colorschemes
     use('folke/tokyonight.nvim')
     use('gruvbox-community/gruvbox')
-    use('joshdick/onedark.vim')
+    use('navarasu/onedark.nvim')
+
+    use({'rose-pine/neovim', as = 'rose-pine'})
 
 
-    -- Completion
+    -- Lsp
+    use('williamboman/mason.nvim')
+    use('williamboman/mason-lspconfig.nvim')
     use('neovim/nvim-lspconfig')
     use({'hrsh7th/nvim-cmp',
         requires = {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-nvim-lua',
-            'hrsh7th/cmp-path', 
+            'hrsh7th/cmp-path',
             'hrsh7th/cmp-buffer',
             'saadparwaiz1/cmp_luasnip'
         }
     })
+
+
 
 
     -- TreeSitter
@@ -30,10 +36,11 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     })
 
+    -- Undotree
+    use('mbbill/undotree')
 
     -- Debugger
     use('mfussenegger/nvim-dap')
-    
 
     -- Snippets
     use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
@@ -51,6 +58,11 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    use {
+        'jose-elias-alvarez/null-ls.nvim',
+        requires = { 'nvim-lua/plenary.nvim' }
+    }
+
     -- File Explorer
     use {
         'kyazdani42/nvim-tree.lua',
@@ -60,13 +72,35 @@ return require('packer').startup(function(use)
         -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
 
+    -- Zen
+    use('folke/zen-mode.nvim')
+    use('folke/twilight.nvim')
+
+    use('lukas-reineke/indent-blankline.nvim')
+
     -- Statusline
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+    use('rcarriga/nvim-notify')
 
+
+    -- Neogit
+    use({ 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' })
+
+
+    -- Comment
+    use ('numToStr/Comment.nvim')
+
+    -- Marks
+    use('chentoast/marks.nvim')
+
+
+    -- HTML
+    -- Closing tags
+    use('leafOfTree/vim-matchtag')
     use('mfussenegger/nvim-jdtls')
 
 end)

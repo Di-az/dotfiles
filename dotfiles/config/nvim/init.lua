@@ -1,2 +1,1 @@
-require('diaz.set')
-require('diaz.remap')
+require('diaz')
