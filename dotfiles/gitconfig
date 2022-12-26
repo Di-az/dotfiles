@@ -2,7 +2,7 @@
     editor = vim
 [user]
 	email = carlosd2mil@gmail.com
-	name = Diaz
+	name = diaz
 [init]
 	defaultBranch = main
 [url "git@github.com:"]
