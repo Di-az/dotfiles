@@ -35,6 +35,16 @@
 ###############################################################################
 
 ###############################################################################
+# i3 Config Partials
+###############################################################################
+
+# Include any regolith i3 partials
+# include /usr/share/regolith/i3/config.d/*
+
+# Include any user i3 partials
+include $HOME/.config/regolith2/i3/config.d/*
+
+###############################################################################
 # Meta Key Mappings
 ###############################################################################
 
@@ -142,27 +152,27 @@ set_from_resource $i3-wm.bar.workspace.urgent.border.color i3-wm.bar.workspace.u
 set_from_resource $i3-wm.bar.workspace.urgent.background.color i3-wm.bar.workspace.urgent.background.color "#dc322f"
 set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urgent.text.color "#fdf6e3"
 
+
+###############################################################################
+# i3 Personal Config
+###############################################################################
+
+include $HOME/.config/regolith2/i3/config.d/*
+
 # Sets i3 font for dialogs
 set_from_resource $i3-wm.font gtk.font_name Sans 13
 font pango:$i3-wm.font
 
 # i3 Gaps Configuration
-for_window [class=".*"] border pixel 2
+for_window [all] border pixel 2
 gaps inner 10
-gaps top 30
-#gaps bottom 30
+gaps outer 10
+gaps top 10
 
 
+# Run dunst (notifications)
+exec_always --no-startup-id dunst
 
-###############################################################################
-# i3 Config Partials
-###############################################################################
-
-# Include any regolith i3 partials
-include /usr/share/regolith/i3/config.d/*
-
-# Include any user i3 partials
-include $HOME/.config/regolith2/i3/config
 
 # Launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
