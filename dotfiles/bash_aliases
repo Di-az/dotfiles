@@ -12,3 +12,5 @@ alias tldr='tldr -t ocean'
 alias backup='echo "shell &&  wsl --export Ubuntu-20.04 ubuntubackup.tar"'
 alias avenv="unset PROMPT_COMMAND && source ./venv/bin/activate" 
 
+# Programming
+alias vrc='nvim ~/.config/nvim'
