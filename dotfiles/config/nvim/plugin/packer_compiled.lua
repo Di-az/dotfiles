@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/diaz/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/diaz/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/diaz/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -218,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/diaz/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tint.nvim"] = {
+    loaded = true,
+    path = "/home/diaz/.local/share/nvim/site/pack/packer/start/tint.nvim",
+    url = "https://github.com/levouh/tint.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,

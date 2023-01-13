@@ -40,3 +40,10 @@ vim.opt.mouse = 'a'
 
 -- New line
 vim.cmd [[set formatoptions=jtcrql]]
+
+vim.cmd [[
+    augroup newline_after_comment
+    autocmd!
+    autocmd FileType * set formatoptions-=o
+    augroup END
+]]

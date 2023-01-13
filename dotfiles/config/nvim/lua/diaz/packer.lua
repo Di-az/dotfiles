@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
             'saadparwaiz1/cmp_luasnip'
         }
     })
+    use('onsails/lspkind.nvim')
 
 
 
@@ -85,6 +86,9 @@ return require('packer').startup(function(use)
     }
 
     use('rcarriga/nvim-notify')
+
+    -- use('sunjon/shade.nvim')
+    use('levouh/tint.nvim')
 
 
     -- Neogit
