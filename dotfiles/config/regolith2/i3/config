@@ -180,9 +180,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Run animated wallpaper
 exec_always --no-startup-id wallpaper $HOME/Wallpapers/GlowingPinkCity.mp4
 
-# Disabled i3 bar
-# /usr/share/regolith/i3/config.d/70_bar
-
 # Keyboard layour switch
 #exec "setxkbmap -layout us,latam -option 'grp:alt_shift_toggle'"
 exec "setxkbmap -layout us,latam"
