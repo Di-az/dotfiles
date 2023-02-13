@@ -184,3 +184,7 @@ exec_always --no-startup-id wallpaper $HOME/Wallpapers/GlowingPinkCity.mp4
 #exec "setxkbmap -layout us,latam -option 'grp:alt_shift_toggle'"
 exec "setxkbmap -layout us,latam"
 exec "setxkbmap -option 'grp:alt_shift_toggle'"
+
+# move focused workspace between monitors
+bindsym $mod+Ctrl+greater move workspace to output right
+bindsym $mod+Ctrl+less move workspace to output left

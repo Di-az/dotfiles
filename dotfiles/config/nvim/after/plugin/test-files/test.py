@@ -1,5 +1,4 @@
 # Program make a simple calculator
-
 # This function adds two numbers
 def add(x, y):
     return x + y
@@ -16,6 +15,9 @@ def multiply(x, y):
 def divide(x, y):
     return x / y
 
+prin
+
+prin
 
 print("Select operation.")
 print("1.Add")

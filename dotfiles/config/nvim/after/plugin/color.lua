@@ -1,10 +1,14 @@
 require('rose-pine').setup({
-    disable_background = true
+    disable_background = true,
 })
 
-require('onedark').setup  {
+require('onedark').setup({
     transparent = true,  -- Show/hide background
-}
+})
+
+require('catppuccin').setup({
+    transparent = true,
+})
 
 -- vim.g.gruvbox_contrast_dark = 'hard'
 -- vim.g.tokyonight_transparent_sidebar = true
@@ -34,7 +38,7 @@ function ColorMyPencils(color)
 
 
     -- Indent line
-    hl("IndentBlanklineContextStart", { fg = "#FF0000", nocombine = true})
+    -- hl("IndentBlanklineContextStart", { fg = "#FF0000", nocombine = true})
     hl("IndentBlanklineContextChar", { fg = "#FFFF00", nocombine = true})
     hl("IndentBlanklineChar", { fg = "#353535", nocombine = true})
 

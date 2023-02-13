@@ -1,4 +1,3 @@
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -36,14 +35,14 @@ vim.opt.signcolumn = "yes"
 vim.g.mapleader = " "
 
 --Mouse
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
--- New line
-vim.cmd [[set formatoptions=jtcrql]]
+-- Formating options
+vim.cmd([[set formatoptions=jtcrql]])
 
-vim.cmd [[
+vim.cmd([[
     augroup newline_after_comment
     autocmd!
     autocmd FileType * set formatoptions-=o
     augroup END
-]]
+]])
