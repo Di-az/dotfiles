@@ -31,24 +31,19 @@ map("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
 map("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
 
 -- Set barbar's options
-require("bufferline").setup({
+require("barbar").setup({
 	-- Enable/disable animations
 	animation = true,
-
 	-- Enable/disable auto-hiding the tab bar when there is a single buffer
 	auto_hide = false,
-
 	-- Enable/disable current/total tabpages indicator (top right corner)
 	tabpages = true,
-
 	-- Enable/disable close button
 	closable = true,
-
 	-- Enables/disable clickable tabs
 	--  - left-click: go to buffer
 	--  - middle-click: delete buffer
 	clickable = true,
-
 	-- Enables / disables diagnostic symbols
 	-- diagnostics = {
 	-- 	[vim.diagnostic.severity.ERROR] = { enabled = true, icon = "ﬀ" },
@@ -59,26 +54,23 @@ require("bufferline").setup({
 
 	-- Disable highlighting alternate buffers
 	highlight_alternate = false,
-
 	-- Disable highlighting file icons in inactive buffers
 	highlight_inactive_file_icons = false,
-
 	-- Enable highlighting visible buffers
 	highlight_visible = true,
-
 	-- Enable/disable icons
-	icons = true,
-
-	-- If set, the icon color will follow its corresponding buffer
-	-- highlight group. By default, the Buffer*Icon group is linked to the
-	-- Buffer* group (see Highlighting below). Otherwise, it will take its
-	-- default value as defined by devicons.
-	icon_custom_colors = false,
-
+	icons = {
+		filetype = {
+			icon_custom_colors = false,
+			enabled = true,
+		},
+		-- button = "",
+		-- modified = "●",
+		pinned = {
+			button = "車",
+		},
+	},
 	-- Configure icons on the bufferline.
-	icon_separator_active = "▎",
-	icon_separator_inactive = "▎",
-	icon_close_tab = "",
-	icon_close_tab_modified = "●",
-	icon_pinned = "車",
+	-- icon_separator_active = "▎",
+	-- icon_separator_inactive = "▎",
 })

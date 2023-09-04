@@ -3,13 +3,19 @@
 -- vim.opt.listchars:append "eol: "
 --
 
+require("indent_blankline").setup({
+	char = "|",
+	space_char_blankline = " ",
+	show_current_context = true,
+	use_treesitter = true,
+	-- show_current_context_start = true,
+})
 
-require("indent_blankline").setup {
-    space_char_blankline = " ",
-    show_current_context = true,
-    -- show_current_context_start = true,
-}
-
-
--- vim.cmd [[highlight IndentBlanklineIndent1 guifg=#00FF00 gui=nocombine]]
--- vim.api.nvim_set_hl(0, "IndentBlanklineIndent", { fg = "#00FF00", nocombine=true})
+-- require("indent_blankline").setup({
+-- 	enabled = true,
+-- 	show_current_context = true,
+-- 	char = "|",
+-- 	char_blankline = "┆",
+-- 	context_char = "*",
+-- 	use_treesitter_scope = false,
+-- })

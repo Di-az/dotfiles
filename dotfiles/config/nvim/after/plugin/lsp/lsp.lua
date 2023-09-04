@@ -1,5 +1,5 @@
-local sumneko_root_path = "/home/diaz/.config/lsp/lua-language-server"
-local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
+-- local sumneko_root_path = "/home/diaz/.config/lsp/lua-language-server"
+-- local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
 
 require("lspconfig.ui.windows").default_options.border = "single"
 
@@ -18,22 +18,19 @@ cmp.setup({
         ["<C-e>"] = cmp.mapping.abort(),
         ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
-
     snippet = {
         expand = function(args)
             require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
-
     sources = cmp.config.sources({
         { name = "nvim_lua" },
         { name = "nvim_lsp" },
         { name = "nvim_lsp_signature_help" },
         { name = "path" },
         { name = "luasnip" },
-        { name = "buffer", keyword_length = 4 },
+        { name = "buffer",                 keyword_length = 4 },
     }),
-
     formatting = {
         format = lspkind.cmp_format({
             mode = "symbol_text",
@@ -47,7 +44,6 @@ cmp.setup({
                 luasnip = "[SNP]",
                 buffer = "[BUF]",
             },
-
             before = function(entry, vim_item)
                 if vim.tbl_contains({ "path" }, entry.source.name) then
                     local icon, hl_group = require("nvim-web-devicons").get_icon(entry:get_completion_item().label)
@@ -61,7 +57,6 @@ cmp.setup({
             end,
         }),
     },
-
     window = {
         completion = {
             border = "rounded",
@@ -72,10 +67,9 @@ cmp.setup({
             scrollbar = "",
         },
     },
-
     experimental = {
         native_menu = false,
-        ghost_text = true,
+        -- ghost_text = true,
     },
 })
 
@@ -84,8 +78,8 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_prev, opts)
-vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_next, opts)
+vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, opts)
+vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, opts)
 vim.keymap.set("n", "<leader>dl", "<Cmd>Telescope diagnostics<CR>", opts)
 vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, opts)
 
@@ -141,17 +135,31 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<space>f", function()
         vim.lsp.buf.format({ async = true })
     end, bufopts)
+    vim.keymap.set("n", "<C-c>", vim.lsp.buf.code_action, bufopts)
 end
 
 -- C C++ C#
-require("lspconfig")["ccls"].setup({
+-- require("lspconfig")["ccls"].setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })
+
+capabilities.offsetEncoding = "utf-8"
+require("lspconfig")["clangd"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = { "clangd-12" },
+})
+
+require("lspconfig")["cssls"].setup({
     on_attach = on_attach,
     capabilities = capabilities,
 })
 
-require("lspconfig")["cssls"].setup({})
-require("lspconfig")["bashls"].setup({})
-require("lspconfig").html.setup({})
+require("lspconfig")["bashls"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
 
 -- -- Python
 require("lspconfig")["pyright"].setup({
@@ -189,8 +197,8 @@ require("lspconfig")["eslint"].setup({
 })
 
 -- Lua
-require("lspconfig")["sumneko_lua"].setup({
-    cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
+require("lspconfig")["lua_ls"].setup({
+    -- cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
@@ -211,6 +219,9 @@ require("lspconfig")["sumneko_lua"].setup({
                     [vim.fn.expand("$VIMRUNTIME/lua")] = true,
                     [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
                 },
+            },
+            telemetry = {
+                enable = false,
             },
         },
     },

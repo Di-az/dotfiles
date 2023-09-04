@@ -13,12 +13,14 @@ local function telescope_buffer_dir()
 end
 
 telescope.setup({
-	-- pickers = {
-	-- 	find_files = {
-	-- 		hidden = true,
-	-- 	},
-	-- },
+	pickers = {
+		find_files = {
+			-- find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+			hidden = true,
+		},
+	},
 	defaults = {
+		sorting_strategy = "ascending",
 		mappings = {
 			i = {
 				-- ["<esc>"] = actions.close,
@@ -35,7 +37,7 @@ telescope.setup({
 		file_browser = {
 			theme = "ivy",
 			-- disables netrw and use telescope-file-browser in its place
-			hijack_netrw = true,
+			-- hijack_netrw = true,
 			mappings = {
 				-- your custom insert mode mappings
 				["i"] = {
@@ -64,7 +66,7 @@ telescope.setup({
 
 -- load_extension, after setup function
 telescope.load_extension("fzf")
-telescope.load_extension("file_browser")
+-- telescope.load_extension("file_browser")
 
 -- Keybinds
 -- local opts = { noremap = true, silent = true }

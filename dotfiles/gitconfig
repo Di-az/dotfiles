@@ -1,5 +1,5 @@
 [core]
-    editor = vim
+    editor = nvim
 [user]
 	email = carlosd2mil@gmail.com
 	name = diaz
@@ -18,3 +18,9 @@
     lg = !"git lg1"
 	ls = !"git log --pretty=format: --name-only --diff-filter=A | sort - | sed '/^$/d'"
     s = status
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	grep = auto
