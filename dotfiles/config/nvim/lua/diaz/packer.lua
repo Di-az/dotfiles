@@ -10,17 +10,6 @@ return require("packer").startup(function(use)
 	use("nvim-tree/nvim-web-devicons")
 	use({ "romgrk/barbar.nvim", wants = "nvim-web-devicons" })
 
-	--------------------
-	---- APPEARANCE ----
-	--------------------
-	-- Colorschemes
-	use("folke/tokyonight.nvim")
-	use("gruvbox-community/gruvbox")
-	use("navarasu/onedark.nvim")
-
-	use({ "rose-pine/neovim", as = "rose-pine" })
-	use({ "catppuccin/nvim", as = "catppuccin" })
-
 	-- Colorize indentation
 	use("lukas-reineke/indent-blankline.nvim")
 
@@ -66,7 +55,7 @@ return require("packer").startup(function(use)
 	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.1",
+		tag = "0.1.x",
 		requires = { "nvim-lua/plenary.nvim" },
 	})
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- FZF integration
@@ -91,9 +80,6 @@ return require("packer").startup(function(use)
 	-- Comment
 	use("numToStr/Comment.nvim")
 
-	-- Marks
-	use("chentoast/marks.nvim")
-
 	-- Closing tags
 	use("windwp/nvim-autopairs")
 	use("windwp/nvim-ts-autotag")
@@ -110,12 +96,17 @@ return require("packer").startup(function(use)
 	-- Notifications
 	use("rcarriga/nvim-notify")
 
-	-- Database
-
 	-- Markdown preview
 	use({ "toppair/peek.nvim", run = "deno task --quiet build:fast" })
 
 	-- Git
 	use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
 	use({ "lewis6991/gitsigns.nvim" })
+
+	-- Colorschemes
+	use("folke/tokyonight.nvim")
+	use("gruvbox-community/gruvbox")
+	use("navarasu/onedark.nvim")
+	use({ "rose-pine/neovim", as = "rose-pine" })
+	use({ "catppuccin/nvim", as = "catppuccin" })
 end)
