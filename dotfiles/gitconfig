@@ -1,10 +1,14 @@
 [core]
     editor = nvim
+[init]
+	defaultBranch = main
+
 [user]
 	email = carlosd2mil@gmail.com
 	name = diaz
-[init]
-	defaultBranch = main
+[includeIf "gitdir:~/code/"]
+    path = ~/code/.gitconfig
+
 [url "git@github.com:"]
     insteadOf = https://github.com/
 [url "git@bitbucket.org:"]
@@ -12,6 +16,7 @@
 
 [alias]
     alias = "config --get-regexp alias"
+	whoami = "!echo \"$(git config user.name)   $(git config user.email)\""
     tree = log --graph --decorate --pretty=oneline --abbrev-commit
     lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
