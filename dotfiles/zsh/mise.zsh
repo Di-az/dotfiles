@@ -1,5 +1,21 @@
-export __MISE_ORIG_PATH='/Users/diaz/.nvm/versions/node/v24.13.0/bin:/Users/diaz/go/bin:/Users/diaz/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/Apple/usr/bin:/opt/homebrew/bin:/Applications/kitty.app/Contents/MacOS'
-export PATH='/Users/diaz/.local/share/mise/shims:/Users/diaz/.nvm/versions/node/v24.13.0/bin:/Users/diaz/go/bin:/Users/diaz/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/Apple/usr/bin:/opt/homebrew/bin:/Applications/kitty.app/Contents/MacOS'
+export PATH='/Users/diaz/go/bin:/Users/diaz/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/Apple/usr/bin:/opt/homebrew/bin:/Applications/kitty.app/Contents/MacOS'
+if typeset -f __mise_clear_completions >/dev/null; then __mise_clear_completions; unset -f __mise_clear_completions; fi
+autoload -Uz add-zsh-hook
+add-zsh-hook -d precmd _mise_hook_precmd 2>/dev/null
+add-zsh-hook -d chpwd _mise_hook_chpwd 2>/dev/null
+(( $+functions[_mise_hook_precmd] )) && unset -f _mise_hook_precmd
+(( $+functions[_mise_hook_chpwd] )) && unset -f _mise_hook_chpwd
+(( $+functions[_mise_hook] )) && unset -f _mise_hook
+(( $+functions[_mise_hook_env_state] )) && unset -f _mise_hook_env_state
+(( $+functions[mise] )) && unset -f mise
+unset MISE_SHELL
+unset __MISE_DIFF
+unset __MISE_SESSION
+unset __MISE_ZSH_PRECMD_RUN
+unset __MISE_ZSH_CHPWD_RAN
+unset __MISE_ZSH_ACTIVATE_PATH
+unset __MISE_ZSH_ACTIVATE_ENV
+export PATH='/Users/diaz/.local/share/mise/shims:/Users/diaz/go/bin:/Users/diaz/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/Apple/usr/bin:/opt/homebrew/bin:/Applications/kitty.app/Contents/MacOS'
 export MISE_SHELL=zsh
 if [ -z "${__MISE_ORIG_PATH:-}" ]; then
   export __MISE_ORIG_PATH="$PATH"
